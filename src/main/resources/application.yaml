@@ -1,0 +1,17 @@
+spring:
+  cache:
+    type: caffeine
+  profiles:
+    active:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+  datasource:
+    url: jdbc:mysql://localhost:3306/fibonacci_db
+    username: root
+    password: Root1234!Root33
+    hikari:
+      connection-timeout: 60000
+      maximum-pool-size: 10
+    driver-class-name: com.mysql.cj.jdbc.Driver

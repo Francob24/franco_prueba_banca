@@ -1,0 +1,29 @@
+openapi: 3.0.0
+info:
+  title: Fibonacci API
+  description: API para calcular el enesimo número de Fibonacci.
+  version: 1.0.0
+paths:
+  /fibonacci:
+    get:
+      summary: Calcula el enesimo número de Fibonacci.
+      parameters:
+        - name: n
+          in: query
+          required: true
+          description: El número n para calcular el enesimo término de Fibonacci.
+          schema:
+            type: integer
+            example: 10
+      responses:
+        '200':
+          description: Resultado exitoso de Fibonacci.
+          content:
+            application/json:
+              schema:
+                type: integer
+                example: 89
+        '400':
+          description: Parámetro de entrada no válido.
+        '404':
+          description: Recurso no encontrado.
